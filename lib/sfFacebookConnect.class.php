@@ -27,7 +27,7 @@ class sfFacebookConnect
     $query = 'SELECT email_hashes FROM user WHERE uid=\''.intval($fb_uid).'\'';
     try
     {
-      $rows = sfFacebook::getFacebookClient()->api_client->fql_query($query);
+      $rows = sfFacebook::getFacebookClient()->api($fb_uid);
     }
     catch (Exception $e)
     {
